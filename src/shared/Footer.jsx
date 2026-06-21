@@ -25,37 +25,34 @@ const socials = [
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer className="border-t border-stone-200 p-4">
       <Container>
-        <div className="p-4">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-              <Logo />
-              <span>Siddhant</span>
+        <div className="flex flex-col items-center gap-4 p-4 md:items-start">
+          <div className="flex items-center gap-2">
+            <Logo />
+            <span>Siddhant</span>
+          </div>
+
+          <div className="flex w-full flex-col items-center justify-between gap-4 md:flex-row md:gap-0">
+            <div>
+              <p className="text-sm">
+                © {new Date().getFullYear()} Siddhant Mul. All rights reserved.
+              </p>
             </div>
+            <div className="flex items-center gap-4">
+              {socials.map((social) => {
+                const Icon = social.icon;
 
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm">
-                  © {new Date().getFullYear()} Siddhant Mul. All rights
-                  reserved.
-                </p>
-              </div>
-              <div className="flex items-center gap-4">
-                {socials.map((social) => {
-                  const Icon = social.icon;
-
-                  return (
-                    <SocialIcon
-                      key={social.name}
-                      href={social.href}
-                      label={social.name}
-                    >
-                      <Icon />
-                    </SocialIcon>
-                  );
-                })}
-              </div>
+                return (
+                  <SocialIcon
+                    key={social.name}
+                    href={social.href}
+                    label={social.name}
+                  >
+                    <Icon />
+                  </SocialIcon>
+                );
+              })}
             </div>
           </div>
         </div>
