@@ -1,7 +1,7 @@
-import { Container } from "./components/Container.jsx";
+import { Container } from "./ui/components/Container.jsx";
 import { NavLink } from "react-router";
 import { Menu } from "lucide-react";
-import { Logo } from "./components/Logo.jsx";
+import { Logo } from "./ui/components/Logo.jsx";
 
 const navLinkClass = ({ isActive }) =>
   `${isActive ? "text-stone-500" : ""} hover:text-stone-500`;
@@ -11,8 +11,9 @@ export const Header = () => {
     <header>
       <Container>
         <nav className="mt-3 flex h-12 items-center justify-between rounded-lg border border-stone-300 bg-[#FFFFFF] px-4">
-          <div className="h-6 w-6">
+          <div className="flex items-center gap-2">
             <Logo />
+            <span>Siddhant</span>
           </div>
           <ul className="hidden items-center gap-6 text-sm md:flex">
             <li>
