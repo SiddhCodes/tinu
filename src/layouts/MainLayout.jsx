@@ -1,11 +1,14 @@
-import { Footer } from "../shared/Footer";
-import { Header } from "../shared/Header";
+import { Outlet } from "react-router";
+import { Footer } from "../shared/Footer.jsx";
+import { Header } from "../shared/Header.jsx";
 
 export const MainLayout = () => {
   return (
     <div>
       <Header />
-      <main></main>
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
